@@ -2,7 +2,7 @@
 /*
 для варианта с type="module"============3 below add
 /*
-import { Server: h1 } from 'http';
+import { Server} from 'http';
 import x from 'express';
 const Router = x.Router();
 const PORT = 4321;
