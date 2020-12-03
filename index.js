@@ -1,10 +1,5 @@
 const [{ Server: h1 }, x] = [require('http'), require('express')];
-/*
-для варианта с type="module"============3 below add
-/*
-import { Server} from 'http';
-import x from 'express';
-/*
+
 const Router = x.Router();
 const PORT = 4321;
 const { log } = console;
@@ -29,7 +24,7 @@ app
   .use((e, r, rs, n) => rs.status(500).set(hu).send(`Ошибка: ${e}`))
   /* .set('view engine', 'pug') */
   .set('x-powered-by', false);
-/* export default Server(app)
+
 module.exports = h1(app)
   .listen(process.env.PORT || PORT, () => log(process.pid));
 
