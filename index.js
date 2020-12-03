@@ -1,5 +1,4 @@
 const [{ Server: h1 }, x] = [require('http'), require('express')];
-
 const Router = x.Router();
 const PORT = 4321;
 const { log } = console;
@@ -24,7 +23,6 @@ app
   .use((e, r, rs, n) => rs.status(500).set(hu).send(`Ошибка: ${e}`))
   /* .set('view engine', 'pug') */
   .set('x-powered-by', false);
-
 module.exports = h1(app)
   .listen(process.env.PORT || PORT, () => log(process.pid));
 
