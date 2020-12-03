@@ -1,8 +1,8 @@
-const [{ Server: h1 }, x] = [require('http'), require('express')];
+/*const [{ Server: h1 }, x] = [require('http'), require('express')];
 /*
 для варианта с type="module"============3 below add
 /*
-import { Server } from 'http';
+import { Server: h1 } from 'http';
 import x from 'express';
 const Router = x.Router();
 const PORT = 4321;
