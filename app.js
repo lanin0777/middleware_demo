@@ -4,11 +4,13 @@ const CORS = {
   'Access-Control-Allow-Headers':
     'x-test,Content-Type,Accept, Access-Control-Allow-Headers',
 };
+const hu = { 'Content-Type': 'text/html; charset=utf-8' };
+const PORT = 4321;
 
-function myFunction(express, bodyParser, createReadStream, crypto, http) {
-  const app = express();
+function myFunction(x, bodyParser, createReadStream, crypto, http) {
+  const app = x();
 
-  app.port = process.env.PORT || 4321;
+  app.port = process.env.PORT || PORT;
 
   app
     .use((req, res, next) => {
@@ -35,9 +37,7 @@ function myFunction(express, bodyParser, createReadStream, crypto, http) {
       response.on('data', (chunk) => (data += chunk));
       response.on('end', () => {
         res
-          .set({
-            'Content-Type': 'text/plain; charset=utf-8',
-          })
+          .set(hu)
           .end(data);
       });
     });
